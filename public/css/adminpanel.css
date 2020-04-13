@@ -1,0 +1,40 @@
+div.outer{
+    position:relative;
+    top:0px;
+    left:0px;
+    height:110%;
+    width:100%;
+    margin-top:5%;
+    background-color: inherit;
+}
+.center_rect{
+    position: relative;
+    background-color: #D0E0F2;
+    margin-left:10%;
+    height: 65%;
+    width: 80%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 50px;
+}
+.space_divs{
+    margin-top: 100px;
+}
+.space_inputs{
+    margin-top: 3%;
+}
+.registration{
+    position: relative;
+    background-color: #D0E0F2;
+    margin-left: 25%;
+    height: 900px;
+    width: 50%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 50px;
+}
+body{
+    background:transparent url("/images/house_construction.jpg");
+    background-color: #cccccc;
+}

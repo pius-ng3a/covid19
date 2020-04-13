@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/public/css/HoldOn.min.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/public/css/bootstrap.min.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/public/css/jquery.datetimepicker.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/public/image/alumni/25th_ann_meeting2.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/public/image/alumni/25th_planning_1.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/public/image/alumni/25th_planning_all.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/public/image/alumni/25th_planning_all1.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/public/image/alumni/25th_planning_meeting.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/public/image/login.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/resources/views/account" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/resources/views/adminold" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/resources/views/adminold/admindashboard.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/adminold/footer.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/adminold/header.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/adminold/main.blade.php" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
