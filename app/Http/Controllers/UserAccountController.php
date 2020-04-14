@@ -25,6 +25,7 @@ use Redirect;
 use \App\Momo;
 use \App\Payment;
 use \App\Order;
+use \App\Patient;
 use File;
 use Image;
 use \App\UserWorksOnProject;
@@ -38,7 +39,7 @@ class UserAccountController extends Controller
     use CheckAllowedPrivileges; // this is trait whose methods are used by this class 'except'=>,'except'=>
 
     public function __construct(){
-        $this->middleware('user',['except'=>["changeLanguage","filterContributorsBybatchAnyMember","getUserAndContributionsByAnyMember","filterContributorsByUserID","filterContributorsBybatch","filterContributorsBybatchRedirect"]
+        $this->middleware('user',['except'=>["getBarChartData","changeLanguage","filterContributorsBybatchAnyMember","getUserAndContributionsByAnyMember","filterContributorsByUserID","filterContributorsBybatch","filterContributorsBybatchRedirect"]
             ]);
 
     }
@@ -49,6 +50,19 @@ class UserAccountController extends Controller
      * @return \Illuminate\Http\Response
      * show form signup form for new account
      */
+
+    public function getBarChartData(){
+      //pull data from db here
+      $critical = DB::table('patient_records')->select('*')->where("state","critical")->get();
+      $stable= DB::table('patient_records')->select('*')->where("state","stable")->get();
+      $healed= DB::table('patient_records')->select('*')->where("state","healed")->get();
+      $died= DB::table('patient_records')->select('*')->where("state","di")->get();
+      $all = DB::table('patient_records')->select('*')->get();
+      $data = [count($critical),count($stable),count($healed),count($died),count($all)];
+      $labels = ['Critical','Stable','Healed','Died','Total'];
+      return response()->json(compact('labels', 'data'));
+
+    }
     public function register()
     {
 

@@ -339,60 +339,11 @@
 
 
 <!-- Start about us counter -->
- {{--<section id="mu-abtus-counter">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mu-abtus-counter-area">
-          <div class="row">
-            <!-- Start counter item -->
-            <div class="col-lg-4 col-md-4 col-sm-4">
-              <div class="mu-abtus-counter-single">
-                <span class="fa fa-book"></span>
-                <h4 class="counter">568</h4>
-                <p>Subjects this id  amdor serious</p>
-                <p>Subjects this id  amdor serious</p>
-                <p>Subjects this id  amdor serious</p>
-              </div>
-            </div>
-            <!-- End counter item -->
-            <!-- Start counter item -->
-            <div class="col-lg-3 col-md-3 col-sm-3">
-              <div class="mu-abtus-counter-single">
-                <span class="fa fa-users"></span>
-                <h4 class="counter">3500</h4>
-                <p>Students</p>
-              </div>
-            </div>
-            <!-- End counter item -->
-            <!-- Start counter item -->
-            <div class="col-lg-3 col-md-3 col-sm-3">
-              <div class="mu-abtus-counter-single">
-                <span class="fa fa-flask"></span>
-                <h4 class="counter">65</h4>
-                <p>Modern Lab</p>
-              </div>
-            </div>
-            <!-- End counter item -->
-            <!-- Start counter item -->
-            <div class="col-lg-3 col-md-3 col-sm-3">
-              <div class="mu-abtus-counter-single no-border">
-                <span class="fa fa-user-secret"></span>
-                <h4 class="counter">250</h4>
-                <p>Teachers</p>
-              </div>
-            </div>
-            <!-- End counter item -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>--}}
+
 <!-- End about us counter -->
 
 <!-- Start features section -->
-<section   style="background-color: rgba(70, 28, 210, 0.29) " >
+{{-- <section   style="background-color: rgba(70, 28, 210, 0.29) " >
   <div class="container" >
     <div class="row"  >
         <div class="col-lg-12 col-md-12 col-xs-12" >
@@ -476,7 +427,7 @@
     </div>
   </div>
 
-</section>
+</section>--}}
 <!-- End features section -->
 <!-- Start staff here-->
 <section id="mu-our-teacher" >
@@ -493,11 +444,10 @@
           <!-- begain our teacher content -->
           <div class="mu-our-teacher-content">
             <div class="row">
-              <div class="col-lg-12 col-md-12  col-sm-12">
+              <div class="col-lg-6 col-md-6  col-sm-6">
                 <div class="mu-our-teacher-single">
                   <figure class="mu-our-teacher-img">
                     <img src="{{URL::asset('image/africamap.jpg')}}" alt="dynamic world map">
-
                   </figure>
                   <div class="mu-ourteacher-single-content">
                     <h4> {{trans('english.principal')}} {{ " : ".trans('english.principal_name')}}</h4>
@@ -505,6 +455,9 @@
                     <p>  </p>
                   </div>
                 </div>
+              </div>
+              <div class="col-lg-6 col-md-6  col-sm-6">
+                <canvas id="myChart" width="400" height="320"></canvas>
               </div>
 
             </div>
@@ -576,5 +529,5 @@
 </section>
 <!-- End testimonial -->
 <div class="">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 </div>

@@ -60,8 +60,72 @@
     <!-- end footer bottom -->
 </footer>
 <!-- End footer -->
+{!! Html::script('js/jquery-1.11.3.min.js') !!}}
+{!! Html::script('js/varsity/bootstrap.js') !!}}
+<!-- METISMENU SCRIPTS -->
+<!-- CUSTOM SCRIPTS -->
+{!! Html::script('js/scripts.js') !!}}
 
+{!! Html::script('js/main.js') !!}}
+
+
+
+
+{!! Html::script('js/HoldOn.min.js') !!}}
 <!-- jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [],
+      datasets: [{
+        label: 'Current COVID19 Patient Statistics(Changes with cases)',
+        data: [],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [],
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
+  var updateChart = function() {
+    $.ajax({
+      url: "/COVID19/public/get/patient/bar/data",
+      type: 'GET',
+      dataType: 'json',
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      success: function(data) {
+
+        myChart.data.labels = data.labels;
+        myChart.data.datasets[0].data = data.data;
+        myChart.update();
+      },
+      error: function(data){
+        console.log(data);
+      }
+    });
+  }
+
+  updateChart();
+  setInterval(() => {
+    updateChart();
+  }, 1000);
+</script>
+
+
+
+
 {{--<script src="{{URL::asset('js/varsity/jquery.min.js')}}"></script>--}}
 {!!Html::script('js/varsity/jquery.min.js')!!}
 <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -39,7 +39,18 @@ class LoginController extends Controller
             ->where('users.userId',Auth::user()->alumni_id)->first();
         return view('account.updateprofile',compact('user'));
     }
+    public function getBarChartData(){
+      //pull data from db here
+      $critical = DB::table('patient_records')->select('*')->where("state","critical")->get();
+      $stable= DB::table('patient_records')->select('*')->where("state","stable")->get();
+      $healed= DB::table('patient_records')->select('*')->where("state","healed")->get();
+      $died= DB::table('patient_records')->select('*')->where("state","died")->get();
+      $all = DB::table('patient_records')->select('*')->get();
+      $data = [count($critical),count($stable),count($healed),count($died),count($all)];
+      $labels = ['Critical','Stable','Healed','Died','Total'];
+      return response()->json(compact('labels', 'data'));
 
+    }
     /**checks if inputs meet specified conditions
      * @param array $data
      * @return mixed
@@ -151,7 +162,7 @@ class LoginController extends Controller
      */
     public function login()
     {
-         
+
        if(Auth::user()){
            return $this->goToDashboard();
        }

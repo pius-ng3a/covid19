@@ -120,7 +120,7 @@ Route::post('/create/new/center',['as'=>'save_center','uses'=>'AdminController@s
 //showPatients
 Route::get('/show/registered/patients',['as'=>'show_patients','uses'=>'AdminController@showRegisteredPatients']);
 Route::post('/show/registerd/patients',['as'=>'save_updated_patient','uses'=>'AdminController@saveEditedPatient']);
-
-
+Route::get('/get/patient/bar/data',['as'=>'bar_data','uses'=>"LoginController@getBarChartData"]);
+Route::post('/get/patient/bar/data',['as'=>'update_data','uses'=>"LoginController@getBarChartData"]);
 /*Print Controller*/
 Route::get('/download/contributions/as/pdf',['uses'=>'PrintController@downloadContributions']);
