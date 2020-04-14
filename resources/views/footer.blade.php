@@ -16,11 +16,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="mu-footer-widget">
-                            <h4>Student Help</h4>
-                            <ul>
-                                <li><a href="{{URL::to('ghs/bafut/welcome#mu-features')}}">{{trans('english.programs')}}</a></li>
-                                <li><a href="{{URL::to('ghs/bafut/welcome#mu-service')}}">{{trans('english.admission')}}</a></li>
-                            </ul>
+                            <h4>Together We will win!</h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3">
@@ -37,8 +33,8 @@
                             <h4></h4>
                             <br/>
 
-                            <p>{{trans('english.phone') . trans('english.schooltel')}} </p>
-                            <p>{{ trans('english.email').trans('english.schoolmail')}}</p>
+                            <p>{{trans('english.phone')}} 0781114767 / 0788762961 </p>
+                            <p>{{ trans('english.email')}} pius2016@gmail.com</p>
 
                             {{--<p>Get latest update, news & academic offers</p>
                             <form class="mu-subscribe-form">

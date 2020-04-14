@@ -23,19 +23,13 @@
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav" >
                     <li class="active"><a href="{{URL::to('/ghs/bafut/welcome')}}">{{trans('english.home')}}</a></li>
                     <li><a  href="{{URL::to('/ghs/bafut/welcome#about_us')}}">{{trans('english.about_ghs_bafut')}}</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{trans('english.program')}} <span class="fa fa-angle-down"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#mu-features">{{trans('english.science')}}</a></li>
-                            <li><a href="#mu-features">{{trans('english.arts')}}</a></li>
-                        </ul>
-                    </li>
 
-                    <li><a href="{{URL::to('/ghsbafut/campus/tour')}}">{{ trans('english.campus')}}</a></li>
-                    <li><a href="#mu-our-teacher">{{ trans('english.staff')}}</a></li>
+
+                    <li><a href="#mu-our-teacher">{{ trans('english.campus')}}</a></li>
+                    <li><a href="#mu-service">{{ trans('english.staff')}}</a></li>
                     <li style="cursor: hand;cursor: pointer"><span style="margin-top: 40%; color:grey" class="modal_listener" onclick="showContactForm(this)">Contact</span></li>
                     <!--<li><a target="__blank" href="{{URL::to('/ghsbafut/alumni/association')}}"> {{ trans('english.ex-students')}}</a></li> -->
-                    <li</li>
+                    <li></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

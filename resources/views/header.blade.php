@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="mu-top-phone">
                                     <i class="fa fa-phone"></i>
-                                    <span>{{trans('english.schooltel')}} </span>
+                                    <span>0781114767 </span>
                                 </div>
 
                             </div>
