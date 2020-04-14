@@ -94,6 +94,49 @@ class LoginController extends Controller
         return Redirect::back();
 
     }
+    public function checkCovidStatus(Request $request){
+      //Chest pain =4; cough=2; cold=2; pains=2;fever=3;travel=4;
+      $tally =0;
+      if($request->get('cough')){
+        $tally = $tally + 2;
+      }
+      if($request->get('chest')){
+        $tally = $tally + 4;
+      }
+      if($request->get('cold')){
+        $tally = $tally + 2;
+      }
+      if($request->get('travel')){
+        $tally = $tally + 4;
+      }
+      if($request->get('fever')){
+        $tally = $tally + 3;
+      }
+      if($request->get('pain')){
+        $tally = $tally + 2;
+      }
+      $feedb ="";
+      if($tally>13){
+        $feedb = "Your Covid19 situation is critical. Please call 114 for medical attention";
+      }
+      elseif ($tally>9) {
+        // code...
+        $feedb = "Your likely to be covid19 positive.Please call 114 for medical attention";
+      }
+      elseif ($tally>5) {
+        // code...
+        $feedb = "Observe your state for few days and check status again";
+
+      }
+      else{
+        $feedb = "low risk of Covid19.Please respect preventive measures prescribed.";
+
+      }
+       
+        \Session::flash("blog_success",$feedb);
+      return Redirect::back();
+    }
+
     public function saveBlogMessage(Request $request)
     {
             $mesage = new Blog();

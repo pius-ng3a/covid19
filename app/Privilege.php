@@ -46,7 +46,7 @@ class Privilege extends Model
      * @return string
      */
     public static function getAuthorisedPrivileges($role_id,$userId){
-        $root = getenv('BASE_URL').'/COVID19/public/' ?: 'localhost/';
+        $root = getenv('BASE_URL').'/COVID20/public/' ?: 'localhost/';
         $result = "";
         /*select allowed privileges for the user */
         $privileges= DB::select(DB::raw("SELECT * from privileges  WHERE privileges.state=1 AND

@@ -99,7 +99,7 @@
   });
   var updateChart = function() {
     $.ajax({
-      url: "/COVID19/public/get/patient/bar/data",
+      url: $('#baseUrl').val()+"/get/patient/bar/data",///COVID20/public
       type: 'GET',
       dataType: 'json',
       headers: {
@@ -109,6 +109,7 @@
 
         myChart.data.labels = data.labels;
         myChart.data.datasets[0].data = data.data;
+        
         myChart.update();
       },
       error: function(data){

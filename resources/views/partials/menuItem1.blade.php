@@ -21,13 +21,13 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav" >
-                    <li class="active"><a href="{{URL::to('/ghs/bafut/welcome')}}">{{trans('english.home')}}</a></li>
+                  <li style="cursor: hand;cursor: pointer"><span style="margin-top: 15%; color:grey" class="modal_listener" onclick="showContactForm(this)">Check COVID19 Status</span></li>
+                    <li class="active" style="color:red;"><a href="{{URL::to('/ghs/bafut/welcome')}}">{{trans('english.home')}}</a></li>
                     <li><a  href="{{URL::to('/ghs/bafut/welcome#about_us')}}">{{trans('english.about_ghs_bafut')}}</a></li>
-
 
                     <li><a href="#mu-our-teacher">{{ trans('english.campus')}}</a></li>
                     <li><a href="#mu-service">{{ trans('english.staff')}}</a></li>
-                    <li style="cursor: hand;cursor: pointer"><span style="margin-top: 40%; color:grey" class="modal_listener" onclick="showContactForm(this)">Contact</span></li>
+                    <!-- <li style="cursor: hand;cursor: pointer"><span style="margin-top: 40%; color:grey" class="modal_listener" onclick="showContactForm(this)">Contact</span></li> -->
                     <!--<li><a target="__blank" href="{{URL::to('/ghsbafut/alumni/association')}}"> {{ trans('english.ex-students')}}</a></li> -->
                     <li></li>
                 </ul>

@@ -80,6 +80,10 @@ Route::get('/start/user/login',['as'=>'login','uses'=>'LoginController@login']);
 Route::post('/start/user/login',['as'=>'auth_user','uses'=>'LoginController@authenticateUser']);
 Route::get('/new/message',['as'=>'user_msg','uses'=>'LoginController@ContactMessage']);
 Route::post('/new/message',['as'=>'user_msg','uses'=>'LoginController@saveContactMessage']);
+Route::get('/new/covid/status',['as'=>'covid_status','uses'=>'LoginController@ContactMessage']);
+Route::post('/new/covid/status',['as'=>'covid_status_query','uses'=>'LoginController@checkCovidStatus']);
+
+
 
 Route::get('/new/blog',['as'=>'user_blog','uses'=>'LoginController@CreateBlogMessage']);
 Route::post('/new/blog',['as'=>'save_blog','uses'=>'LoginController@saveBlogMessage']);
