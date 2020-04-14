@@ -85,6 +85,31 @@ class User extends Model implements AuthenticatableContract,
             ->where("users.userId","=",$id)->first();
         return $user;
     }
+   public static function getAllDoctorOptions(){
+     $doctor = $users= DB::table('users')->where("role_id",2)->get();
+     $docOptions = "";
+     foreach($doctor as $doc){
+       $docOptions .='<option value='.$doc->userId.'>'.$doc->FirstName.' '.$doc->LastName.'</option>';
+     }
+     return $docOptions;
+   }
+   public static function getAllPatientOptions(){
+     $patient = DB::table('users')->select('*')->where("role_id",3)->get();
+     $patOptions = "";
+     foreach($patient as $doc){
+       $patOptions .='<option value='.$doc->userId.'>'.$doc->FirstName.' '.$doc->LastName.'</option>';
+     }
+     return $patOptions;
+   }
+
+   public static function getAllCenterOptions(){
+     $sites = DB::table('sites')->get();
+     $siteOptions = "";
+     foreach($sites as $st){
+       $siteOptions .='<option value='.$st->site_id.'>'.$st->SiteName.'</option>';
+     }
+     return $siteOptions;
+   }
 
     public static function getAllAdminUsers(){
         $users= DB::table('users')->join("roles","roles.role_id","=","users.role_id")->select("users.*","roles.role_id","roles.name")->where('users.state',1)->where('users.role_id',"!=",4)->get();

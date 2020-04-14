@@ -6,6 +6,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2 style="text-align: center">{{trans('english.my_dashboard')}}</h2>
+                    <p>NB:Implemented functionalities are: Add User, Add Center, Add Patient, View Patients</p>
                 </div>
                 <div class="col-md-4">
                     <?php $unread_messages = \App\Message::getUnreadMessages(); ?>
@@ -35,25 +36,56 @@
 
                                     </div>
                                     <div class="col-md-6 col-xs-9">
-                                        <h2>{{trans('english.welcome_admin')."  " . $logon->FirstName . " " .$logon->LastName }}</h2>
+                                        <h4>{{trans('english.welcome_admin')."  " . $logon->FirstName . " " .$logon->LastName }}</h4>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <h3  > {{trans('english.dashboard_info')}}</h3>
-                                    <h4 style="margin-left: 3px;color: blue"> {{trans('english.track_warn')}}</h4>
-                                    <p style="margin-left: 3px; "> {{trans('english.best_interest')}}</p>
-                                    <p style=" color: darkviolet"> {{trans('english.good_ride')}}</p>
+                                    <h3  > Use The Left Pane for differnt functionalities.</h3>
+                                    <h4 style="margin-left: 3px;color: blue"> Together, we shall beat COVID19</h4>
+                                    <p style="margin-left: 3px; "> Protect yourself and others.</p>
                                 </div>
                                  </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-4 bg-color-blue" style="padding-right: 3%;border-radius: 20px;">
-                 <p> <img src="{{URL::asset('image/alumni/exco/dashboard_police.jpg')}}" style="margin-top: 5%;height: 380px; width: 300px;" /> </p>
-                 <h2 class="blink_me" style="text-align: center;color: red;">{{trans('english.warning')}}</h2>
+                <div class="col-md-4 bg-color-blue" >
+                <table style="table-layout:fixed " class="table table-bordered table-striped">
+                  <thead>
+                  <tr style="background-color: #0088CC">
+                     <th>Total Cases </th>
+                    <th>Recovered</th>
+                    <th>Critical</th>
+                    <th>deaths </th>
+                    <th>stable</th> </tr>
+                  </thead>
+                  <tbody> <?php $counter =0;$sum = 66;
+                          $patients = \App\Patient::getSomePatients(30);
+                          $critical = DB::table('patient_records')->select('*')->where("state","critical")->get();
+                          $stable= DB::table('patient_records')->select('*')->where("state","stable")->get();
+                          $healed= DB::table('patient_records')->select('*')->where("state","healed")->get();
+                          $died= DB::table('patient_records')->select('*')->where("state","died")->get();
+                          $all = DB::table('patient_records')->select('*')->get();
+
+                          $cr = count($critical);
+                          $st = count($stable);
+                          $he = count($healed);
+                          $al = count($all);
+                          $die = count($died);
+                       ?>
+                       <tr style="color: #00000">
+                            <td style="color: red">{!!$al !!}</td>
+                            <td style="color: green">{!! $he  !!}</td>
+                            <td style="color: red">{!!$cr  !!}</td>
+                            <td style="color: black">{!!   $die !!}</td>
+                            <td style="color: darkviolet">{!!$st  !!}</td>
+                       </tr>
+                </tbody>
+                </table>
+                 <br/>
                 </div>
                 <div class="col-md-3">
+                  here
                 </div>
             </div>
             <!-- /. ROW  -->

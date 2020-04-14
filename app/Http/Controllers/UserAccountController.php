@@ -71,7 +71,7 @@ class UserAccountController extends Controller
     public function registerPatient()
     {
 
-         return view('account.registerpatient');
+         return view('patients.registerPatient');
     }
     public function savePatientDetails(Request $request)
     {
@@ -96,10 +96,10 @@ class UserAccountController extends Controller
             //$file->move(public_path().'/images/'.$product->category.'/', $name);
         }
 
-        $id = DB::table('users')->InsertGetId(array('picture'=>$name,'Email'=>$request->input('email'),
-            'FirstName'=>$request->input('first_name'),'LastName'=>$request->input('last_name'),
-            'Phone'=>$request->input('phone'),'Address'=>$request->input('address'),'Location'=>$request->input('batch'),
-            'role_id'=>$request->input('role_id'))  );
+        $id = DB::table('patient_records')->InsertGetId(array(
+            'doctor_id'=>$request->input('doctor_id'),'observation'=>$request->input('observation'),
+            'discharged_on'=>$request->input('discharged_on'),'patient_userId'=>$request->input('patient_userId'),'state'=>$request->input('state'),
+            'site_id'=>$request->input('site_id'),'quarantine_id'=>$request->input('quarantine_id'),'appointment_id'=>$request->input('appointment_id'),'consulted_on'=>$request->input('consulted_on') ));
 
         //User::create($request->all());
         \Session::flash('success',trans('english.account_creation_success'));

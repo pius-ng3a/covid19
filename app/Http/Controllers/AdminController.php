@@ -40,10 +40,7 @@ class AdminController extends Controller
        return view('admin.admindashboard');
     }
 
-   /* public function adminmanage()
-    {
-        return view('admin/admindashboard');
-    }*/
+    
     public function showusers()
     {
         if($this->checkRevokedSubPrivilege(Auth::user()->userId,9)){

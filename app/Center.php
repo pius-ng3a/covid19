@@ -27,8 +27,16 @@ class Center extends Model
         return $events;
     }
     public function getAllCenters(){
-      $centers = DB::table('sites')->select('*')->orderBy('SiteName',ASC);
+      $centers = DB::table('sites')->select('*')->orderBy('SiteName','ASC')->get();
       return $centers;
+    }
+    public static function getAllCenterOptions(){
+      $centers = DB::table('sites')->select('*')->orderBy('SiteName','ASC')->get();
+      $centerOpts="";
+      foreach($centers as $ct){
+        $centerOpts .='<option value='.$ct->Id.'>'.$ct->SiteName.'</option>';
+      }
+      return $centerOpts;
     }
 
 }

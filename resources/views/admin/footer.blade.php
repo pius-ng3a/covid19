@@ -17,7 +17,6 @@
 
 {!! Html::script('js/main.js') !!}}
 
-{!! Html::script('js/jquery.scrollUp.min.js') !!}}
 
 {!! Html::script('js/jquery.datetimepicker.js') !!}}
 
