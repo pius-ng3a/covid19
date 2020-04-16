@@ -60,18 +60,18 @@
     <!-- end footer bottom -->
 </footer>
 <!-- End footer -->
-{!! Html::script('js/jquery-1.11.3.min.js') !!}}
-{!! Html::script('js/varsity/bootstrap.js') !!}}
+{!! Html::script('js/jquery-1.11.3.min.js') !!}
+{!! Html::script('js/varsity/bootstrap.js') !!}
 <!-- METISMENU SCRIPTS -->
 <!-- CUSTOM SCRIPTS -->
-{!! Html::script('js/scripts.js') !!}}
+{!! Html::script('js/scripts.js') !!}
 
-{!! Html::script('js/main.js') !!}}
-
-
+{!! Html::script('js/main.js') !!}
 
 
-{!! Html::script('js/HoldOn.min.js') !!}}
+
+
+{!! Html::script('js/HoldOn.min.js') !!}
 <!-- jQuery library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>

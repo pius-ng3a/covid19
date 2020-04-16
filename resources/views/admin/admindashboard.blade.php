@@ -27,12 +27,13 @@
 
                     <div class="form-group">
                         <div class="panel panel-primary text-center no-boder bg-color-blue" style="background-color: rgba(2, 5, 2, 0.04); color: black ">
-                            <div class="panel-body">
+                            <div >
                                 <i class="fa fa-info"></i>
                                 <?php $logon = Auth::user(); ?>
                                 <div class="row">
                                     <div class="col-md-6 col-xs-9">
-                                        <p> <img src="{{URL::asset('image/pius_welcome.jpg')}}" style="margin-top: 5%;height: 200px; width: 200px;border-radius: 50%" /> </p>
+                                        <!-- <p> <img src="{{URL::asset('image/pius_welcome.jpg')}}" style="margin-top: 5%;height: 200px; width: 200px;border-radius: 50%" /> </p> -->
+                                      
 
                                     </div>
                                     <div class="col-md-6 col-xs-9">
@@ -43,10 +44,15 @@
                                     <h3  > Use The Left Pane for differnt functionalities.</h3>
                                     <h4 style="margin-left: 3px;color: blue"> Together, we shall beat COVID19</h4>
                                     <p style="margin-left: 3px; "> Protect yourself and others.</p>
+                                    
                                 </div>
+                                
                                  </div>
                         </div>
                     </div>
+                    <div class="col-md-12 big-color-blue">
+                        <canvas id="myPie" width="400" height="290"></canvas>
+                     </div>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4 bg-color-blue" >
@@ -83,10 +89,14 @@
                 </tbody>
                 </table>
                  <br/>
+                 
                 </div>
-                <div class="col-md-3">
-                  here
+                <div class="col-md-1"></div>
+                <div class="col-md-4 big-color-blue" style="margin-left:45px;">
+                    <canvas id="myChart" width="400" height="500"></canvas>
                 </div>
+                <div class="col-md-1"></div>
+                 
             </div>
             <!-- /. ROW  -->
         </div>
@@ -94,4 +104,5 @@
     </div>
     <!-- /. PAGE WRAPPER  -->
     </div>
+   
 @stop

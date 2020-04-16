@@ -33,7 +33,7 @@
       <h4>{{trans('english.condusive_campus')}}</h4>
       <span></span>
       <h2>{{trans('english.good_envt')}}</h2>
-      <a  target="__blank" href="{{URL::to('ghsbafut/campus/tour')}}" class="mu-read-more-btn">{{trans('english.tour_campus')}}</a>
+      <a    href="#mu-our-teacher" class="mu-read-more-btn">{{trans('english.tour_campus')}}</a>
     </div>
   </div>
   <!-- Start single slider item -->
@@ -121,9 +121,7 @@
 
 <!-- Start single slider item -->
 
- <!-- End of single slider item-->
-
-  <!-- Start single slider item -->
+  
 </section>
 <!-- End Slider -->
 <!-- Start service  -->
@@ -161,6 +159,45 @@
 <!-- End service  -->
 
 <!-- Start about us -->
+<section id="mu-our-teacher" >
+  <div class="container" style="margin-top: -100px;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-our-teacher-area">
+          <!-- begain title -->
+          <div class="mu-title">
+            <h2>{{trans('english.our_teachers')}}</h2>
+              <p>{{trans('english.our_teachers_intro')}}</p>
+           </div>
+          <!-- end title -->
+          <!-- begain our teacher content -->
+          <div class="mu-our-teacher-content">
+            <div class="row">
+              <div class="col-lg-6 col-md-6  col-sm-6">
+                <div class="mu-our-teacher-single">
+                  <figure class="mu-our-teacher-img">
+                    <img src="{{URL::asset('image/africamap.jpg')}}" alt="dynamic world map">
+                  </figure>
+                  <div class="mu-ourteacher-single-content">
+                    <h4> {{trans('english.principal')}} {{ " : ".trans('english.principal_name')}}</h4>
+
+                    <p>  </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6  col-sm-6">
+                <canvas id="myChart" width="400" height="320"></canvas>
+              </div>
+
+            </div>
+          </div>
+          <!-- End our teacher content -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="mu-about-us" style="margin-top: -4%;background-color: rgba(55, 85, 93, 0.29)">
 {!!Html::style('css/munde.css')!!}
   <div class="container">
@@ -169,64 +206,12 @@
         <div class="mu-about-us-area">
           <div class="row">
             <div class="col-lg-6 col-md-6">
-              <div class="mu-about-us-left">
-                <!-- Start Title -->
-                <div class="mu-title">
-                  <h2>{{trans('english.mother_school')}}</h2>
-                </div>
-                <!-- End Title -->
-
-
-                        <img style="height: 40%; width: 50%;padding: 2%;" src="{{URL::asset('image/cor.jpg')}}" align="left" clear="left">
-                    <p>{{trans('english.mother_bd')}}</p>
-                    <ul>
-                    </ul>
-                    <p> </p>
-              </div>
+               
             </div>
             <div class="col-lg-6 col-md-6">
-              <h3 class="event_section"><marquee>{{trans('english.latest_news').'&' . trans('english.events')  }}</marquee></h3>
+              <!-- <h3 class="event_section"><marquee>{{trans('english.latest_news').'&' . trans('english.events')  }}</marquee></h3> -->
                 <?php $events = \App\Message::getUnreadMessages();?>
-                @if(count($events)>0)
-                  @foreach( $events as $event)
-
-                   <div class="news_element" style=" border:none">
-                      <div style="background-color: ghostwhite; margin: 2%;padding: 10px; border:none">
-                          <h3 class="event_header" style="margin-bottom: 40px;"> {{$event->event_name}}</h3>
-                          <p><span style="color: orchid;text-transform: capitalize;"><i>{{trans('english.when').": "}}</i></span>  <?php $date = DateTime::createFromFormat("Y-m-d",  $event->date);
-                          $date2 = strtotime($event->date);
-                                    // or your date as well
-                                     $now = time();
-                                    $datediff = $date2 - $now ;
-                                    $days = 0;
-                                    $days_gone = -1;
-                                    $today = \Carbon\Carbon::now();
-                                   if($date > $today){
-
-                                      $days = floor($datediff / (60 * 60 * 24));
-                                      $days_gone = $days_gone * $days;
-                                   }else{
-                                      $days = floor($datediff / (60 * 60 * 24));
-                                      $days_gone = $days_gone * $days;
-                                   }
-                          echo $date->format("D"); echo "  "; echo $date->format("d"); echo " , " ; echo $date->format('M-Y');$event->date ?>
-                           @if($days > 0 )
-                                <span style="margin-left: 15%; float:right; color: #b03e00"><i class="fa fa-clock-o"></i>{{$days ." ".trans('english.days_to_go')}} </span>
-                           @else
-                               <span style="margin-left: 15%; float:right ;color: #b03e00"><i class="fa fa-clock-o"></i>{{$days_gone ." ".trans('english.days_ago')}} </span>
-                            @endif
-                          </p>
-                          <p style="color: darkcyan;tranformation: capitalize; "><span style="color: goldenrod;text-transform: capitalize;"><i>{{trans('english.venue')."  :  "}}</i></span>{{ $event->venue}}</p>
-                          <p class="plimit">{{ $event->description}} </p>
-                          <button type="button" class="modal_listener" onclick="populateModal(this,{{$event->event_id}})">  {{trans('english.read_more').'...'}}  </button>
-                      </div>
-                    </div>
-                  @endforeach
-                @else
-                  <div class="news_element">
-                      <img height="100%" width="100%" src="{{URL::asset('image/no_event.jpg')}}">
-                  </div>
-                @endif
+                
                <div class="modal_pop_up">
                   <div class="modal-content">
                     <span class="close" onclick="closeModal(this)">x</span>
@@ -444,44 +429,7 @@
 </section>--}}
 <!-- End features section -->
 <!-- Start staff here-->
-<section id="mu-our-teacher" >
-  <div class="container" style="margin-top: -100px;">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mu-our-teacher-area">
-          <!-- begain title -->
-          <div class="mu-title">
-            <h2>{{trans('english.our_teachers')}}</h2>
-              <p>{{trans('english.our_teachers_intro')}}</p>
-           </div>
-          <!-- end title -->
-          <!-- begain our teacher content -->
-          <div class="mu-our-teacher-content">
-            <div class="row">
-              <div class="col-lg-6 col-md-6  col-sm-6">
-                <div class="mu-our-teacher-single">
-                  <figure class="mu-our-teacher-img">
-                    <img src="{{URL::asset('image/africamap.jpg')}}" alt="dynamic world map">
-                  </figure>
-                  <div class="mu-ourteacher-single-content">
-                    <h4> {{trans('english.principal')}} {{ " : ".trans('english.principal_name')}}</h4>
 
-                    <p>  </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6  col-sm-6">
-                <canvas id="myChart" width="400" height="320"></canvas>
-              </div>
-
-            </div>
-          </div>
-          <!-- End our teacher content -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- End staff here -->
 
